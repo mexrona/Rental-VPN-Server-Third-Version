@@ -8,15 +8,12 @@
 7. Burger
 */
 
-
-
 /* 1. Lang */
 const enLangButton = document.querySelector("#enLangButton");
 const ruLangButton = document.querySelector("#ruLangButton");
 
-const enLangTexts = document.querySelectorAll("#enLangText");
-const ruLangTexts = document.querySelectorAll("#ruLangText");
-
+const enLangTexts = document.querySelectorAll(".enLangText");
+const ruLangTexts = document.querySelectorAll(".ruLangText");
 
 enLangButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -35,7 +32,6 @@ enLangButton.addEventListener("click", (event) => {
     }
 });
 
-
 ruLangButton.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -53,21 +49,16 @@ ruLangButton.addEventListener("click", (event) => {
     }
 });
 
-
 ruLangButton.click();
-
-
 
 /* 2. Theme */
 const themeLight = document.querySelector("#themeLight");
 const themeDark = document.querySelector("#themeDark");
 
-
 function setTheme(themeName) {
     localStorage.setItem("theme", themeName);
     document.documentElement.className = themeName;
 }
-
 
 themeLight.addEventListener("click", (event) => {
     event.preventDefault();
@@ -83,7 +74,6 @@ themeLight.addEventListener("click", (event) => {
     }
 });
 
-
 themeDark.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -98,16 +88,11 @@ themeDark.addEventListener("click", (event) => {
     }
 });
 
-
-
 /* 3. Rounded Text */
 new CircleType(document.querySelector(".home__slogan")).dir(-1).radius(600);
 
-
-
 /* 4. Fixed Header */
 const header = document.querySelector("#header");
-
 
 window.addEventListener("scroll", () => {
     let scrollPos = window.scrollY;
@@ -119,16 +104,14 @@ window.addEventListener("scroll", () => {
     }
 });
 
-
-
 /* 5. Logo Scroll */
 const logo = document.querySelector("#logo");
 const links = document.querySelectorAll(".nav__link");
 
-logo.addEventListener("click", event => {
+logo.addEventListener("click", (event) => {
     event.preventDefault();
 
-    links.forEach(link => {
+    links.forEach((link) => {
         link.classList.remove("active");
     });
 
@@ -139,12 +122,10 @@ logo.addEventListener("click", event => {
     });
 });
 
-
-
 /* 6. Nav Links Active */
-links.forEach(link => {
+links.forEach((link) => {
     link.addEventListener("click", () => {
-        links.forEach(link => {
+        links.forEach((link) => {
             link.classList.remove("active");
         });
 
@@ -152,12 +133,9 @@ links.forEach(link => {
     });
 });
 
-
-
 /* 7. Burger */
 const nav = document.querySelector("#nav");
 const burger = document.querySelector("#burger");
-
 
 burger.addEventListener("click", () => {
     if (!nav.classList.contains("active")) {
